@@ -2,7 +2,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
-public class C8_JsonPathKullanimi {
+public class  C8_JsonPathKullanimi {
 
     /*
 
@@ -69,17 +69,6 @@ public class C8_JsonPathKullanimi {
                 +personalInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("number")+"\n\t\t"
                 +personalInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("type")+"-"
                 +personalInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("number"));
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
