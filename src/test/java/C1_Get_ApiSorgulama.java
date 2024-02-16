@@ -30,7 +30,7 @@ public class C1_Get_ApiSorgulama {
         String url="https://restful-booker.herokuapp.com/booking/10";
         //2-Gerekli ise Expected Data hazırlanır
         //3-Actual Data kaydedilir
-        Response response=given().when().get(url)   ;
+        Response response=given().when().get(url);
 
         //response.prettyPrint();
         System.out.println("Status Code: "+response.getStatusCode());
