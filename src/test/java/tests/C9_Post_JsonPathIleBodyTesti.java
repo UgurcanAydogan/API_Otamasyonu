@@ -1,3 +1,5 @@
+package tests;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -37,7 +39,10 @@ public class C9_Post_JsonPathIleBodyTesti {
 
     @Test
     public void JsonPathIleBodyTesti(){
+
+        //  1-Endpoint belirlenerek hazırlanır
         String url="https://restful-booker.herokuapp.com/booking";
+
         JSONObject dates=new JSONObject();
         dates.put( "checkin" , "2021-06-01");
         dates.put( "checkout" , "2021-06-10");
@@ -50,8 +55,12 @@ public class C9_Post_JsonPathIleBodyTesti {
         reqBody.put("bookingdates",dates);
         reqBody.put("additionalneeds", "wi-fi");
 
+       // 2-Gerekli ise Expected Data hazırlanır
+
+       // 3-Actual Data kaydedilir
         Response response=given().contentType(ContentType.JSON).when().body(reqBody.toString()).post(url);
 
+        // 4-Assertion İşlemi Yapılır
         response.then().assertThat()
                                     .statusCode(200)
                                     .contentType("application/json")
